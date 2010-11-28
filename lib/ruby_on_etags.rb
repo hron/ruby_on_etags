@@ -41,7 +41,7 @@ module RubyOnEtags
                                   'gems',
                                   "#{gem_spec.name}-#{gem_spec.version.version}",
                                   'TAGS')
-        etags(gem_spec.loaded_from, tags_filename)
+        etags(gem_spec.load_paths.join(' '), tags_filename)
         tags_filename
       end
     end
