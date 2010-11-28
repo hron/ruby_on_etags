@@ -19,8 +19,11 @@ Feature: Integration with any ruby project
   Scenario: Building TAGS with rake
     Given a standard ruby project directory structure
     And Ruby On ETags is installed
-    When I run "rake GEMS='mechanize-1.0.0, org-ruby-0.5.3' ruby_on_etags:build"
+    When I run "rake ruby_on_etags:build"
     Then a file named "TAGS" should exist
+    # project sources
     And the file "TAGS" should contain "StandardRubyProject"
+    # ruby standard library
     And the file "TAGS" should contain "Array"
-    And the file "TAGS" should contain "Mechanize"
+    # used gem
+    And the file "TAGS" should contain "RubyOnEtags"
