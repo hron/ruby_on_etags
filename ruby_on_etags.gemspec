@@ -8,7 +8,7 @@ Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["Aleksei Gusev"]
   s.email       = ["aleksei.gusev@gmail.com"]
-  s.homepage    = "https://github.com/hron/dotfiles"
+  s.homepage    = "https://github.com/hron/ruby_on_etags"
   s.summary     = "Automatic generation of TAGS for all ruby modules a project use."
   s.description = "Ruby on ETags is a set of rake tasks to help a developer keep TAGS file up to
 date."
