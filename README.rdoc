@@ -1,0 +1,42 @@
+== Ruby on ETags
+
+Ruby on ETags is a set of rake tasks to help a developer keep TAGS file up to
+date.
+
+== Installation
+
+  gem install ruby_on_etags
+
+Add the following to Rakefile:
+
+  require 'ruby_on_etags'
+  RubyOnEtags.install_tasks
+
+== Usage
+
+To build TAGS file which includes definitions of your project modules, all
+dependecies gems and ruby version you use, run the following:
+
+  rake ruby_on_etags:build
+
+This task maintain cache to avoid building tags for static files like gems or
+ruby sources.
+
+Also, you can use the following task to build TAGS everytime you change
+something in the project:
+
+  rake ruby_on_etags:watch
+
+== Maintainers
+
+* Aleksei Gusev (http://github.com/hron)
+
+== Bugs and Feedback
+
+If you discover any bugs, please create an issue on GitHub.
+
+http://github.com/hron/ruby-on-etags/issues
+
+== License
+
+MIT License. Copyright 2010 Aleksei Gusev.
