@@ -35,7 +35,7 @@ something in the project:
 
 If you discover any bugs, please create an issue on GitHub.
 
-http://github.com/hron/ruby-on-etags/issues
+http://github.com/hron/ruby_on_etags/issues
 
 == License
 
