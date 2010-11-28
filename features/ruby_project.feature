@@ -6,13 +6,14 @@ Feature: Integration with any ruby project
     Given a standard ruby project directory structure
     When I append to "Rakefile" with:
       """
+      require 'ruby_on_etags'
       RubyOnEtags.install_tasks
       """
-    And I run "rake -T etags"
+    And I run "rake -T ruby_on_etags"
     Then the output should contain:
       """
-      rake etags       # Build TAGS for whole project
-      rake etags:watch # Watch for changes in project directory and build TAGS when needed
+      rake ruby_on_etags:build  # Build TAGS for whole project.
+      rake ruby_on_etags:watch  # Watch for changes in project directory and build TAGS when needed.
       """
 
   Scenario: Building TAGS with rake
