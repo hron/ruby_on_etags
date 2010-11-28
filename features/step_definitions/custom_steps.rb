@@ -1,6 +1,11 @@
 Given /^a standard ruby project directory structure$/ do
   steps %Q{
     Given an empty file named "Rakefile"
+    And a file named "lib/standard_ruby_project.rb" with:
+      """
+      module StandardRubyProject
+      end
+      """
   }
 end
 
@@ -12,8 +17,4 @@ Given /^Ruby On ETags is installed$/ do
       RubyOnEtags.install_tasks
       """
   }
-end
-
-Then /^TAGS should contain definition of "([^"]*)"$/ do |arg1|
-  pending # express the regexp above with the code you wish you had
 end
