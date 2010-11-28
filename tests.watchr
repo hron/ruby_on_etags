@@ -22,7 +22,7 @@ end
 
 def run_single_spec *spec
   spec = spec.join(' ')
-  run "rspec #{spec}"
+  run "rspec --format documentation #{spec}"
 end
 
 def run_specs_with_shared_examples(shared_example_filename, spec_path = 'spec')
