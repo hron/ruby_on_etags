@@ -6,10 +6,10 @@ Gem::Specification.new do |s|
   s.name        = "ruby_on_etags"
   s.version     = RubyOnEtags::VERSION
   s.platform    = Gem::Platform::RUBY
-  s.authors     = ["TODO: Write your name"]
-  s.email       = ["TODO: Write your email address"]
-  s.homepage    = ""
-  s.summary     = %q{TODO: Write a gem summary}
+  s.authors     = ["Aleksei Gusev"]
+  s.email       = ["aleksei.gusev@gmail.com"]
+  s.homepage    = "https://github.com/hron/dotfiles"
+  s.summary     = "Automatic generation of TAGS for all ruby modules a project use."
   s.description = %q{TODO: Write a gem description}
 
   s.rubyforge_project = "ruby_on_etags"
