@@ -22,5 +22,5 @@ Feature: Integration with any ruby project
     When I run "rake GEMS='mechanize-1.0.0, org-ruby-0.5.3' ruby_on_etags:build"
     Then a file named "TAGS" should exist
     And the file "TAGS" should contain "StandardRubyProject"
-    And TAGS should contain definition of "Array"
-    And TAGS should contain definition of "Mechanize"
+    And the file "TAGS" should contain "Array"
+    And the file "TAGS" should contain "Mechanize"
