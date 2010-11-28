@@ -30,9 +30,11 @@ module RubyOnEtags
 
     def build_tags
       remove_tags
-      concatenate_tags_files(build_tags_for_standard_library,
-                             *build_tags_for_gems,
-                             build_tags_current_dir)
+      tags_files = []
+      tags_files << build_tags_for_standard_library
+      tags_files += build_tags_for_gems
+      tags_files << build_tags_current_dir
+      concatenate_tags_files(tags_files)
     end
 
     def build_tags_for_gems
@@ -60,9 +62,9 @@ module RubyOnEtags
       tags_file.path
     end
 
-    def concatenate_tags_files(*args)
+    def concatenate_tags_files(tags_files)
       File.open("TAGS", 'w') do |tags|
-        args.each do |tags_filename|
+        tags_files.each do |tags_filename|
           tags << IO.read(tags_filename)
         end
       end
