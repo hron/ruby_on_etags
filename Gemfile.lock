@@ -3,6 +3,8 @@ PATH
   specs:
     ruby_on_etags (0.0.1)
       bundler (~> 1.0.0)
+      rake (~> 0.8.7)
+      watchr (~> 0.7)
 
 GEM
   remote: http://rubygems.org/
@@ -47,6 +49,7 @@ GEM
     ruby_core_source (0.1.4)
       archive-tar-minitar (>= 0.5.2)
     term-ansicolor (1.0.5)
+    watchr (0.7)
 
 PLATFORMS
   ruby
@@ -59,3 +62,4 @@ DEPENDENCIES
   rspec (~> 2.1.0)
   ruby-debug19 (~> 0.11.6)
   ruby_on_etags!
+  watchr (~> 0.7)

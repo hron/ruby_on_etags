@@ -21,6 +21,7 @@ module RubyOnEtags
 
         desc "Watch for changes in project directory and build TAGS when needed."
         task :watch do
+          system "watchr -e 'watch(\"\.rb\") { system \"rake ruby_on_etags:build &>/dev/null\" }'"
         end
 
       end
