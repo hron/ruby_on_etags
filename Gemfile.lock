@@ -4,6 +4,7 @@ PATH
     ruby_on_etags (0.0.2)
       bundler (~> 1.0.0)
       rake (~> 0.8.7)
+      thor (~> 0.14.6)
       watchr (~> 0.7)
 
 GEM
@@ -49,6 +50,7 @@ GEM
     ruby_core_source (0.1.4)
       archive-tar-minitar (>= 0.5.2)
     term-ansicolor (1.0.5)
+    thor (0.14.6)
     watchr (0.7)
 
 PLATFORMS
@@ -62,4 +64,5 @@ DEPENDENCIES
   rspec (~> 2.1.0)
   ruby-debug19 (~> 0.11.6)
   ruby_on_etags!
+  thor (~> 0.14.6)
   watchr (~> 0.7)

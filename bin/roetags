@@ -1,0 +1,7 @@
+#! /usr/bin/env ruby
+
+require 'bundler'
+Bundler.setup
+
+require 'ruby_on_etags/cli'
+RubyOnEtags::CLI.start

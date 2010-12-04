@@ -28,4 +28,5 @@ date."
   s.add_dependency("bundler", "~>1.0.0")
   s.add_dependency("watchr", "~>0.7")
   s.add_dependency("rake", "~>0.8.7")
+  s.add_dependency("thor", "~>0.14.6")
 end
