@@ -1,4 +1,4 @@
-Feature: Integration with any ruby project
+Feature: Integration using rake
   As a developer I want to able to easy install Ruby On ETags
   To have ability build TAGS with all ruby modules involved in a project
 
