@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    ruby_on_etags (0.0.1)
+    ruby_on_etags (0.0.2)
       bundler (~> 1.0.0)
       rake (~> 0.8.7)
       watchr (~> 0.7)
