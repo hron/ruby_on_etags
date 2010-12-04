@@ -1,3 +1,4 @@
+@announce
 Feature: Integration using rake
   As a developer I want to able to easy install Ruby On ETags
   To have ability build TAGS with all ruby modules involved in a project
@@ -13,9 +14,9 @@ Feature: Integration using rake
     # used gem
     And the file "TAGS" should contain "RubyOnEtags"
 
-  Scenario: Running 'roetags watch'
-    Given a standard ruby project directory structure
-    When I run "roetags watch" interactively
-    Then the output should contain "Watching..."
-    When I type "^C"
-    Then the output should contain "Quiting..."
+  # Scenario: Running 'roetags watch'
+  #   Given a standard ruby project directory structure
+  #   When I run "roetags watch" interactively
+  #   Then the output should contain "Watching..."
+  #   When I type "^C"
+  #   Then the output should contain "Quiting..."
