@@ -17,7 +17,7 @@ def run(cmd)
 end
 
 def run_all_tests
-  run "rake SPEC_OPTS=\"--format progress\" spec && rake cucumber CUCUMBER_FORMAT='progress'"
+  run "rake SPEC_OPTS=\"--format progress\" spec && rake cucumber features/ CUCUMBER_FORMAT='progress'"
 end
 
 def run_single_spec *spec
