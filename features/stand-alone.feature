@@ -12,3 +12,10 @@ Feature: Integration using rake
     And the file "TAGS" should contain "Array"
     # used gem
     And the file "TAGS" should contain "RubyOnEtags"
+
+  Scenario: Running 'roetags watch'
+    Given a standard ruby project directory structure
+    When I run "roetags watch" interactively
+    Then the output should contain "Watching..."
+    When I type "^C"
+    Then the output should contain "Quiting..."
