@@ -10,5 +10,5 @@ require 'rspec'
 require 'rspec/core/rake_task'
 
 RSpec::Core::RakeTask.new do |t|
-  t.skip_bundler = true
+  t.skip_bundler = false
 end

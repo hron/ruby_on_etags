@@ -90,10 +90,10 @@ module RubyOnEtags
 
     def loaded_gems
       if File.exists?("Gemfile")
-        Bundler.load.specs
-        # Bundler::Definition.build(Bundler.default_gemfile,
-        #                           Bundler.default_lockfile,
-        #                           nil).specs
+        # Bundler.load.specs
+        Bundler::Definition.build(Bundler.default_gemfile,
+                                  Bundler.default_lockfile,
+                                  nil).specs
       else
         []
       end
