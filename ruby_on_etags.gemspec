@@ -20,7 +20,7 @@ date."
   s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   s.require_paths = ["lib"]
 
-  s.add_development_dependency("cucumber", "~>0.9.0")
+  s.add_development_dependency("cucumber", "~>0.10.0")
   s.add_development_dependency("rspec", "~>2.1.0")
   s.add_development_dependency("aruba", "~>0.2.6")
   s.add_development_dependency("ruby-debug19", "~>0.11.6")
