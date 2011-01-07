@@ -7,17 +7,12 @@ date.
 
   gem install ruby_on_etags
 
-Add the following to Rakefile:
-
-  require 'ruby_on_etags'
-  RubyOnEtags.install_tasks
-
 == Usage
 
 To build TAGS file which includes definitions of your project modules, all
 dependecies gems and ruby version you use, run the following:
 
-  rake ruby_on_etags:build
+  roetags build
 
 This task maintain cache to avoid building tags for static files like gems or
 ruby sources.
@@ -25,7 +20,7 @@ ruby sources.
 Also, you can use the following task to build TAGS everytime you change
 something in the project:
 
-  rake ruby_on_etags:watch
+  roetags watch
 
 == Maintainers
 
