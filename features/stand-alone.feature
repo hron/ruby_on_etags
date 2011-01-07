@@ -4,7 +4,11 @@ Feature: Integration using rake
   To have ability build TAGS with all ruby modules involved in a project
 
   Scenario: Building TAGS with standalone binary
-    Given a standard ruby project directory structure
+    # Given I run "rvm gemset delete roetags" interactively
+    # And I type "yes"
+    Given I'm using a clean gemset "roetags"
+    And a standard ruby project directory structure
+    And I run "cd ../..; gem build ./ruby_on_etags.gemspec; gem install ruby_on_etags-*.gem; rm ruby_on_etags-*.gem"
     When I run "roetags build"
     Then a file named "TAGS" should exist
     # project sources

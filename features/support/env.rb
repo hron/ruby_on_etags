@@ -1,4 +1,4 @@
-require 'aruba'
+require 'aruba/cucumber'
 
 ENV['RUBY_ON_ETAGS_CACHE'] = File.join("tmp", "ruby_on_etags_cache")
 

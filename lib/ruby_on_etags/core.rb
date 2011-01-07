@@ -1,6 +1,26 @@
 require 'tempfile'
 require 'bundler'
 
+require 'bundler/definition'
+require 'bundler/dependency'
+require 'bundler/dsl'
+require 'bundler/environment'
+require 'bundler/gem_helper'
+require 'bundler/graph'
+require 'bundler/index'
+require 'bundler/installer'
+require 'bundler/lazy_specification'
+require 'bundler/lockfile_parser'
+require 'bundler/remote_specification'
+require 'bundler/resolver'
+require 'bundler/runtime'
+require 'bundler/settings'
+require 'bundler/shared_helpers'
+require 'bundler/spec_set'
+require 'bundler/source'
+require 'bundler/shared_helpers'
+require 'bundler/ui'
+
 module RubyOnEtags
   class Core
 
@@ -69,7 +89,14 @@ module RubyOnEtags
     end
 
     def loaded_gems
-      File.exists?("Gemfile") ? Bundler.load.specs : []
+      if File.exists?("Gemfile")
+        Bundler.load.specs
+        # Bundler::Definition.build(Bundler.default_gemfile,
+        #                           Bundler.default_lockfile,
+        #                           nil).specs
+      else
+        []
+      end
     end
 
 
