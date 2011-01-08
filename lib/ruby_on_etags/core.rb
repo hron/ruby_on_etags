@@ -57,7 +57,7 @@ module RubyOnEtags
                                   'gems',
                                   "#{gem_spec.name}-#{gem_spec.version.version}",
                                   'TAGS')
-        etags(gem_spec.load_paths.join(' '), tags_filename)
+        etags(gem_spec.load_paths, tags_filename)
         tags_filename
       end
     end
@@ -65,14 +65,14 @@ module RubyOnEtags
     def build_tags_for_standard_library
       File.join(cache_dir, 'rubies', RUBY_VERSION, 'TAGS').tap do |tags_filename|
         dirs = $:.delete_if { |path| path =~ %r|/gems/| }
-        etags(dirs.join(' '), tags_filename)
+        etags(dirs, tags_filename)
       end
     end
 
     def build_tags_current_dir
       tags_file = Tempfile.new('ruby_on_etags-project-TAGS')
       tags_file.close
-      etags(".", tags_file.path)
+      etags(["."], tags_file.path)
       tags_file.path
     end
 
@@ -113,7 +113,8 @@ module RubyOnEtags
     def etags(dirs, output)
       if !File.exists?(output) || File.zero?(output)
         FileUtils.mkdir_p(File.dirname(output))
-        run "etags -R -o #{output} #{dirs}"
+        dirs &&= dirs.map{|d| "'#{d}'"}.join(' ')
+        run "ctags -e -R -o '#{output}' #{dirs}"
       end
     end
 
