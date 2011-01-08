@@ -12,7 +12,7 @@ describe RubyOnEtags do
     G
 
     in_current_dir do
-      should have(3).loaded_gems
+      should have(3).gems_in_use
     end
   end
 

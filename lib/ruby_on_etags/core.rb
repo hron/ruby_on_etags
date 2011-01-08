@@ -52,7 +52,7 @@ module RubyOnEtags
     end
 
     def build_tags_for_gems
-      loaded_gems.map do |gem_spec|
+      gems_in_use.map do |gem_spec|
         tags_filename = File.join(cache_dir,
                                   'gems',
                                   "#{gem_spec.name}-#{gem_spec.version.version}",
@@ -88,7 +88,7 @@ module RubyOnEtags
       FileUtils.rm_f("TAGS")
     end
 
-    def loaded_gems
+    def gems_in_use
       if File.exists?("Gemfile")
         # Bundler.load.specs
         Bundler::Definition.build(Bundler.default_gemfile,
