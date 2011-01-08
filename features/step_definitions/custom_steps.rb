@@ -12,6 +12,7 @@ Given /^a standard ruby project directory structure$/ do
       end
       """
   }
+
   install_gems <<-G
     gem 'ruby_on_etags', :path => '../..'
   G
