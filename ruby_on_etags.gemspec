@@ -10,8 +10,7 @@ Gem::Specification.new do |s|
   s.email       = ["aleksei.gusev@gmail.com"]
   s.homepage    = "https://github.com/hron/ruby_on_etags"
   s.summary     = "Automatic generation of TAGS for all ruby modules a project use."
-  s.description = "Ruby on ETags is a set of rake tasks to help a developer keep TAGS file up to
-date."
+  s.description = "Ruby on ETags is a tool to help a developer keep TAGS file up to date."
 
   s.rubyforge_project = "ruby_on_etags"
 
