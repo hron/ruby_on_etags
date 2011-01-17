@@ -70,7 +70,7 @@ module RubyOnEtags
     end
 
     def build_tags_current_dir
-      tags_file = Tempfile.new('ruby_on_etags-project-TAGS')
+      tags_file = Tempfile.new('ruby_on_etags-project-TAGS', '.')
       tags_file.close
       etags(["."], tags_file.path)
       tags_file.path
