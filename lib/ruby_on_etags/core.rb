@@ -57,7 +57,7 @@ module RubyOnEtags
                                   'gems',
                                   "#{gem_spec.name}-#{gem_spec.version.version}",
                                   'TAGS')
-        etags(gem_spec.load_paths, tags_filename)
+        etags(gem_spec.load_paths, tags_filename, :ctags_flags => "--tag-relative=no")
         tags_filename
       end
     end
@@ -65,7 +65,7 @@ module RubyOnEtags
     def build_tags_for_standard_library
       File.join(cache_dir, 'rubies', RUBY_VERSION, 'TAGS').tap do |tags_filename|
         dirs = $:.delete_if { |path| path =~ %r|/gems/| }
-        etags(dirs, tags_filename)
+        etags(dirs, tags_filename, :ctags_flags => "--tag-relative=no")
       end
     end
 
@@ -110,11 +110,13 @@ module RubyOnEtags
       system "$SHELL -c 'cd .; #{cmd}'"
     end
 
-    def etags(dirs, output)
+    def etags(dirs, output, options = {})
       if !File.exists?(output) || File.zero?(output)
+        ctags_additional_flags = options.delete(:ctags_flags) || ""
+
         FileUtils.mkdir_p(File.dirname(output))
         dirs &&= dirs.map{|d| "'#{d}'"}.join(' ')
-        run "ctags -e -R -o '#{output}' #{dirs}"
+        run "ctags #{ctags_additional_flags} -e -R -o '#{output}' #{dirs}"
       end
     end
 
