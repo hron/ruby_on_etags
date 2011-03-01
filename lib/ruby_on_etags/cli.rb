@@ -7,7 +7,11 @@ module RubyOnEtags
 
     desc "build", "Build TAGS for whole project."
     def build
-      RubyOnEtags::Core.new.build_tags
+      begin
+        RubyOnEtags::Core.new.build_tags
+      rescue Bundler::GemNotFound
+        puts "Install missing gems with `bundle install`"
+      end
     end
 
     desc "watch", "Watch for changes in project directory and build TAGS when needed."
