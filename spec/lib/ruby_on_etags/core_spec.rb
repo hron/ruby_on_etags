@@ -3,6 +3,7 @@ require 'spec_helper'
 describe RubyOnEtags::Core do
 
   before do
+    @aruba_timeout_seconds = 30
     unset_bundler_env_vars
     use_clean_gemset("roetags")
   end

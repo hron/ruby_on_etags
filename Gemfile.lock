@@ -19,6 +19,7 @@ GEM
     childprocess (0.1.6)
       ffi (~> 0.6.3)
     columnize (0.3.2)
+    configuration (1.2.0)
     cucumber (0.10.0)
       builder (>= 2.1.2)
       diff-lcs (~> 1.1.2)
@@ -28,11 +29,30 @@ GEM
     diff-lcs (1.1.2)
     ffi (0.6.3)
       rake (>= 0.8.7)
-    gherkin (2.3.3)
+    gherkin (2.3.4)
       json (~> 1.4.6)
+    guard (0.3.0)
+      open_gem (~> 1.4.2)
+      thor (~> 0.14.6)
+    guard-bundler (0.1.2)
+      guard (>= 0.2.2)
+    guard-cucumber (0.2.4)
+      cucumber (~> 0.10.0)
+      guard (~> 0.3.0)
+    guard-ego (0.0.1)
+      guard (>= 0.2.1)
+    guard-rspec (0.2.0)
+      guard (>= 0.2.2)
     json (1.4.6)
+    launchy (0.3.7)
+      configuration (>= 0.0.5)
+      rake (>= 0.8.1)
+    libnotify (0.3.0)
+      ffi (>= 0.6.2)
     linecache19 (0.5.11)
       ruby_core_source (>= 0.1.4)
+    open_gem (1.4.2)
+      launchy (~> 0.3.5)
     rake (0.8.7)
     rspec (2.3.0)
       rspec-core (~> 2.3.0)
@@ -62,6 +82,12 @@ PLATFORMS
 DEPENDENCIES
   aruba (~> 0.3.2)
   cucumber (~> 0.10.0)
+  guard
+  guard-bundler
+  guard-cucumber
+  guard-ego
+  guard-rspec
+  libnotify
   rspec (~> 2.3.0)
   ruby-debug19 (~> 0.11.6)
   ruby_on_etags!
