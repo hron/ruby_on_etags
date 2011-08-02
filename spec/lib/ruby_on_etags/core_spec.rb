@@ -1,7 +1,6 @@
 require 'spec_helper'
 
 describe RubyOnEtags::Core do
-
   before do
     @aruba_timeout_seconds = 30
     unset_bundler_env_vars
@@ -9,7 +8,6 @@ describe RubyOnEtags::Core do
   end
 
   context 'when all needed gems are installed' do
-
     before do
       install_gems <<-G
         gem 'watchr'
@@ -22,7 +20,5 @@ describe RubyOnEtags::Core do
         should have(3).gems_in_use
       end
     end
-
   end
-
 end
